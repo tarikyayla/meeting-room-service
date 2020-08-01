@@ -63,7 +63,7 @@ Adminer Dashboard: http://localhost:8080
 {
   "Roomid" : 1,
   "Numberofpeople" : 10,
-  "between" : ["2018-05-11 09:10:00","2018-05-11 10:10:00"]
+  "Between" : ["2018-05-11 09:10:00","2018-05-11 10:10:00"]
 }
 ```
 **Response** : 
