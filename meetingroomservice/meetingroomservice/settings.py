@@ -79,7 +79,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'meetingroomservice',
-        'USER' : 'user',
+        'USER' : 'root',
         'PASSWORD' : '123123',
         'HOST' : 'db',
         'PORT' : 3306
