@@ -12,10 +12,6 @@ services:
        MYSQL_ROOT_PASSWORD: 123123
        MYSQL_PASSWORD: 123123
        MYSQL_DATABASE : meetingroomservice
-    healthcheck:
-      test : ["CMD","mysqladmin","ping","-h","localhost"]
-      timeout: 20s
-      retries: 10
   monitor:
     image: adminer
     container_name: "monitor"
@@ -28,7 +24,7 @@ services:
     build: ./meetingroomservice
     container_name: "web"
     restart: always
-    command: python manage.py runserver 0.0.0.0:8000
+    command: bash -c "./wait-for-it.sh db:3306 && python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     ports:
       - 8000:8000
     depends_on:
